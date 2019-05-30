@@ -1,32 +1,41 @@
 <template>
-<div id = "demoOne">
+<div id = "Demo">
 <div class = "textHolder">
-<div class = "title"><h1> {{title}}</h1></div>
+<!-- <div id="title" class = "title"> 
+    {{title}}
+    </div> -->
 <div id="content"> {{msg}}</div>
+<button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
 </div>
 <div id = "imagesHolder">
 <div class = "pictureHolder"  v-for="topic in topics">
 <img class ="picture" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" v-bind:src="'https://source.unsplash.com/1600x900/?'+topic"/>
-
 </div>
 </div>
-<div class = "end">
+<!-- <div class = "End">
 <button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
-</div>
+</div> -->
 </div>
 </template>
 
 <script>
 import router from '../router.js'
-
+import fitty from 'fitty'
 export default {
-    name: 'demoOne',
+    name: 'DemoOne',
     data () {
         return {
             topics: ['oceans', 'stars', 'mountains', 'listen', 'beyond', 'synchronize'],
-            msg: "This demo is uses CSS Grid to create a responsive environment. Velocity.js is used for the animations, and Vue.js is used to create the structure and actions. ",
+            msg: "This demo uses Vue.js, the Unsplash photo API, CSS Grid, and Velocity.js to create a responsive photo gallery with hover animation. ",
             title: 'Responsive Image Gallery With Hover Effect'
         }
+    },
+    mounted() {
+        console.log('mounted working');
+        // fitty('#content',{
+        // minSize: 14,
+        // maxSize: 30
+        // });
     },
     methods: {
         nextDemo(){
@@ -38,8 +47,8 @@ export default {
             console.log(thing)
     //   Velocity(document.getElementById("imagesHolder"), { zIndex:-1 }, { duration: 300, complete:done })
       Velocity(thing.target, {
-        scale: 1.3,   translateY: '+=2em',
-        translateX: '-=1em', zIndex:100,
+        scale: 1.1,   translateZ: '-=2em',
+        zIndex:100,
         
         }, 
         { duration: 300, complete:done })
@@ -62,45 +71,64 @@ export default {
 </script>
 
 <style scoped>
-#demoOne{
+ /* eslint-disable */
+
+#Demo{
     display: grid;
-    /* justify-content: center; */
-    /* align-items: center; */
-    height: 100vh;
     width: 100vw;
     grid-gap: 4vh;
     grid-template-columns: 100vw;
-    grid-template-rows: 5vh 70vh 5vh;
+    grid-template-rows: 20vh 1fr;
     background: #f0f0f0;
     color:#D3F6FA;
+    font-size:16px;
 }
 
+/*  Mobile First  */
 #imagesHolder{
     display:grid;
-    /* align-items: center; */
     width:90vw;
     margin-left:auto;
     margin-right:auto;
-    /* height: 70vh; */
+    grid-auto-rows: minmax(200px, auto);
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    /* grid-template-rows: minmax(200px, auto);     */
-    /* grid-template-rows: repeat(2, 200px);     */
-    grid-gap: 3vh;
-    /* background:#F8FA9D; */
+    grid-gap: 5vw;
     color:#0C385F;
 }
 
+
 .textHolder{
-     width: 75%;
+     width: 100%;
     color:#537780;
     margin:auto;
+    margin-bottom: 1.1em;
     /* background: #444; */
+}
+.picture{
+    width: 250px;
+    height: 137px;
+    border: 9px solid #43dde6;
+    box-shadow: 9px 5px 1px 1px #fc5185;
+}
+
+/* Desktop Settings */
+@media (min-width: 900px) {
+#Demo{
+    grid-template-rows: 10vh 1fr;
+
 }
 .picture{
     width: 350px;
     height: 200px;
     border: 9px solid #43dde6;
-    box-shadow: 9px 5px 1px 1px #fc5185;
+
+}
+
+.textHolder{
+    width:68%;
+    font-size:21px;
+
+}
 }
 
 .pictureHolder{
@@ -109,7 +137,7 @@ export default {
     align-items: center;
     flex-direction: column;
     padding: 1em;
-    margin: 1em;
+    margin: 2em;
     /* border: 2px solid black; */
 
 }
@@ -118,17 +146,21 @@ export default {
    margin:auto;
 }
 
+.End{
+    margin-top: 1em;
+}
 button{
    background: none;
    width: 300px;
    height:50px;
-   color: #444;
-   border: 2px solid #444;
+   color: #537780;
+   border: 2px solid #537780;
    font-size:16px;
    font-weight:bold;
+
 }
 button:hover{
-    background:#444;
+    background:#537780;
     color:white;
 }
 </style>

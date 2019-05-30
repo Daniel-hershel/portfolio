@@ -9,7 +9,10 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "blast-text": "^2.0.0",
     "core-js": "^2.6.5",
+    "fitty": "^2.2.6",
+    "particles.js": "^2.0.0",
     "velocity-animate": "^1.5.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
