@@ -2,10 +2,10 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/demoone">Demo One</router-link> |
-      <router-link to="/demotwo">Demo Two</router-link> |
-      <router-link to="/demothree">Demo Three</router-link>|
-      <router-link to="/demofour">Demo Four</router-link>
+      <router-link to="/dOne">Demo One</router-link> |
+      <router-link to="/dTwo">Demo Two</router-link> |
+      <router-link to="/dThree">Demo Three</router-link>|
+      <router-link to="/dFour">Demo Four</router-link>
     </div>
     <router-view />
   </div>
@@ -25,7 +25,7 @@ body{
   background:#f0f0f0;
 }
 #nav {
-  padding: 30px;
+  padding: 15px;
 }
 
 #nav a {
@@ -36,5 +36,25 @@ body{
 #nav a.router-link-exact-active {
   /* color: #42b983; */
   color: #fc5185;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+button{
+   background: none;
+   width: 300px;
+   height:50px;
+   color: #537780;
+   border: 2px solid #537780;
+   font-size:16px;
+   font-weight:bold;
+   margin-top: 1em;
+}
+button:hover{
+    background:#537780;
+    color:white;
 }
 </style>

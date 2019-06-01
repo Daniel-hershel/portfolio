@@ -1,4 +1,4 @@
-<template>
+s<template>
 <div id = "Demo">
 
 <div class = "IntroHolder">
@@ -143,7 +143,7 @@ export default {
             {"particles_nb":2}}},"retina_detect":true});
         },
         nextDemo(){
-            router.push('demofour')
+            router.push('dFour')
             console.log('buttonWorking')
         }
     }
@@ -158,7 +158,7 @@ export default {
     display: grid;
     width: 100vw;
     grid-gap: 3vh;
-    grid-template-columns: 97vw;
+    grid-template-columns: 95vw;
     margin:auto;
     grid-template-rows: 5vh 70vh 10vh;
     background: #f0f0f0;    
@@ -180,7 +180,7 @@ export default {
     width: 90vw;
     margin:auto;
     padding: 1vw;
-    grid-gap: 1vw;
+    grid-gap: 1em;
     background: #537780;
     grid-template-columns: 44vw 1fr;
     grid-template-rows:30vh 30vh;
@@ -197,6 +197,7 @@ export default {
     flex-direction: column;
     text-align: center;
     height:30vh;
+
     /* position:relative; */
 }
 .animOne{
@@ -214,7 +215,7 @@ export default {
     grid-area: topRight;
     background:#98b4a6;
     color: #d1e4d1;
-    font-size: 27px;
+    font-size: 24px;
 }
 
 .connectedText{
@@ -244,35 +245,25 @@ export default {
 .EndHolder {
 
 }
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-button{
-   background: none;
-   width: 300px;
-   height:50px;
-   color: #537780;
-   border: 2px solid #537780;
-   font-size:16px;
-   font-weight:bold;
-}
-button:hover{
-    background:#537780;
-    color:white;
-}
+
+
 /* Mobile Settings */
 @media (max-width: 900px) {
 
     #Demo{
-    grid-template-rows: 20vh 85vh 10vh;
+    grid-template-rows: 15vh 95vh 10vh;
+    font-size: 16px;    
+    }
 
+    .quote{
+        font-size:36px;
+        width: 85%;
+        margin:auto;
     }
     .MainContentHolder {
-        width:100vw;
-        grid-template-columns:100vw;
+        width:90vw;
+        margin:auto;
+        grid-template-columns:90vw;
         grid-template-areas:
         "topLeft"
         "topRight"

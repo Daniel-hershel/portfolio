@@ -1,16 +1,15 @@
 <template>
 <div id = "Demo">
+
 <div class = "textHolder">
-<!-- <div id="title" class = "title"> 
-    {{title}}
-    </div> -->
-<div id="content"> {{msg}}</div>
-<button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
+<!-- <div id="title" class = "title"> {{title}}</div> -->
+    <div id="content"> {{msg}}</div>
+    <button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
 </div>
 <div id = "imagesHolder">
-<div class = "pictureHolder"  v-for="topic in topics">
-<img class ="picture" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" v-bind:src="'https://source.unsplash.com/1600x900/?'+topic"/>
-</div>
+    <div class = "pictureHolder"  v-for="topic in topics">
+    <img class ="picture" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" v-bind:src="'https://source.unsplash.com/1600x900/?'+topic"/>
+     </div>
 </div>
 <!-- <div class = "End">
 <button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
@@ -40,7 +39,7 @@ export default {
     methods: {
         nextDemo(){
             console.log('buttonWorking')
-            router.push('demotwo')
+            router.push('dTwo')
 
         },
         mouseOver(thing, done){
@@ -72,6 +71,7 @@ export default {
 
 <style scoped>
  /* eslint-disable */
+/*  Mobile First  */
 
 #Demo{
     display: grid;
@@ -84,10 +84,9 @@ export default {
     font-size:16px;
 }
 
-/*  Mobile First  */
 #imagesHolder{
     display:grid;
-    width:90vw;
+    width:95vw;
     margin-left:auto;
     margin-right:auto;
     grid-auto-rows: minmax(200px, auto);
@@ -98,11 +97,10 @@ export default {
 
 
 .textHolder{
-     width: 100%;
+     width: 90%;
     color:#537780;
     margin:auto;
     margin-bottom: 1.1em;
-    /* background: #444; */
 }
 .picture{
     width: 250px;
@@ -111,25 +109,6 @@ export default {
     box-shadow: 9px 5px 1px 1px #fc5185;
 }
 
-/* Desktop Settings */
-@media (min-width: 900px) {
-#Demo{
-    grid-template-rows: 10vh 1fr;
-
-}
-.picture{
-    width: 350px;
-    height: 200px;
-    border: 9px solid #43dde6;
-
-}
-
-.textHolder{
-    width:68%;
-    font-size:21px;
-
-}
-}
 
 .pictureHolder{
     display: flex;
@@ -141,10 +120,7 @@ export default {
     /* border: 2px solid black; */
 
 }
-#content{
-   width:65%;
-   margin:auto;
-}
+
 
 .End{
     margin-top: 1em;
@@ -162,5 +138,27 @@ button{
 button:hover{
     background:#537780;
     color:white;
+}
+
+/* Desktop Settings */
+@media (min-width: 900px) {
+#Demo{
+    grid-template-rows: 10vh 1fr;
+    font-size: 21px;    
+
+
+}
+.picture{
+    width: 350px;
+    height: 200px;
+    border: 9px solid #43dde6;
+
+}
+
+.textHolder{
+    width:68%;
+    margin:auto;
+    font-size: 21px;    
+}
 }
 </style>

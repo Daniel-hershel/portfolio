@@ -1,8 +1,8 @@
 <template>
 <div id="Home">
   
-  <div id="name" class = "hd section">
-    <div class = "wrapper">{{name}}</div>
+  <div class = "hd section">
+    <div id="name" class = "wrapper">{{name}}</div>
     </div>  
   <div class = "bl section">
     <div id= "blurb" class = "wrapper">{{blurb}}</div>
@@ -19,7 +19,6 @@
 
 <script>
 import router from '../router.js'
-import fitty from 'fitty'
 export default {
   name: "HelloWorld",
   data() {
@@ -31,24 +30,10 @@ export default {
   },
   mounted() {
     console.log('mounted working');
-    // fitty('#name',{
-    // minSize: 45,
-    // maxSize: 300
-    // });
-
-    // fitty('#title',{
-    //   minSize:64,
-    //   maxSize: 100
-    // })
-
-    // fitty('#blurb', {
-    //   minSize: 20,
-    //   maxSize: 38
-    // })
   },
   methods: {
     nextDemo(){
-      router.push('demoone')
+      router.push('dOne')
     }
   }
 };
@@ -56,7 +41,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+ /* eslint-disable */
 
+/* Mobile First */
 #Home{
   display: grid;
   width: 95vw;
@@ -113,11 +100,7 @@ export default {
 
 .wrapper{
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   flex-direction: column;
-  /* height: 35vh; */
-  /* background: rgba(43, 54, 59, .3); */
 }
 
 .hd{
@@ -133,18 +116,5 @@ export default {
   grid-area:ti;
   /* line-height:4em; */
 }
-button{
-   background: none;
-   width: 300px;
-   height:50px;
-   color: #537780;
-   border: 2px solid #537780;
-   font-size:16px;
-   font-weight:bold;
-   margin-top: 1vh;
-}
-button:hover{
-    background:#537780;
-    color:white;
-}
+
 </style>

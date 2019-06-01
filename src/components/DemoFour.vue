@@ -65,10 +65,10 @@ export default {
     width: 100vw;
     grid-gap: 1.5vh;
     grid-template-columns: 100vw;
-    grid-template-rows: 5vh 75vh 5vh;
+    grid-template-rows: 9vh 75vh 5vh;
     background: #f0f0f0;
     color:#537780;
-    font-size: 18px;
+    font-size: 21px;
 }
 
 .IntroHolder {
@@ -88,6 +88,8 @@ export default {
     padding: 1vh;
     /* background: rgba(83, 119, 128, .7); */
     grid-template-columns: 90vw;
+    grid-auto-rows: minmax(250px, auto);
+
     /* grid-template-rows: 15vh 40vh; */
     grid-gap: 2vh;
 }
@@ -174,19 +176,13 @@ button:hover{
     background:#537780;
     color:white;
 }
-/* Desktop  */
-@media (min-width: 900px) {
 
-    .MainContentHolder{
-            grid-template-rows: 15vh 40vh;
-
-    }
-}
 /*  Mobile Settings */
 @media (max-width: 900px) {
     #Demo{
         grid-template-rows: 9vh 100vh;
         /* border: 1px solid red; */
+        font-size:16px;
 
         /* grid-auto-rows: minmax(200px, auto); */
 

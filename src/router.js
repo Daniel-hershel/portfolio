@@ -18,22 +18,22 @@ export default new Router({
       component: Home
     },
     {
-      path: "/demoone",
+      path: "/dOne",
       name: "demoOne",
       component: DemoOne
     },
     {
-      path: "/demotwo",
+      path: "/dTwo",
       name: "demoTwo",
       component: DemoTwo
     },
     {
-      path: "/demothree",
+      path: "/dThree",
       name: "demoThree",
       component: DemoThree
     },
     {
-      path: "/demofour",
+      path: "/dFour",
       name: "demoFour",
       component: DemoFour
     },

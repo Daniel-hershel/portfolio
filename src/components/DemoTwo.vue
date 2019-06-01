@@ -59,7 +59,7 @@ export default {
             color: "#fffff8",
             title: 'Create Your Own Poster',
             title: "Demo Two",
-            msg: "This demo is uses conditional rendering, text binding, and style control for an interactive poster making environment.",
+            msg: "This demo uses conditional rendering, text binding, and style control for an interactive poster making environment.",
             instructionsOne: 'To begin enter any word or short phrase into the box below and press "Create" to create an interactive poster with your word.',
             instructionsTwo:'To start a new poster, or to get a new image, simply start typing in the box and watch the poster genreate in real time!',
             instructionsThree: 'You can adjust the text style with the controls below your generated image.',
@@ -70,7 +70,7 @@ export default {
     methods: {
         nextDemo(){
             console.log('buttonWorking')
-            router.push('demothree')
+            router.push('dThree')
 
         },
         createImage(){
@@ -94,15 +94,16 @@ export default {
     grid-gap: .5em;
     grid-template-columns: 95vw;
     margin:auto;
-    grid-template-rows: 8vh 20vh 5vh;
+    grid-template-rows: 15vh 75vh 5vh;
     background: #f0f0f0;
     color:#537780;
     font-size: 21px;
 }
 
 .textHolder{
-    display:flex;
-
+    width:68%;
+    margin:auto;
+    font-size: 21px;    
 }
 .contentHolder {
     display: grid;
@@ -124,10 +125,11 @@ export default {
 
 #output{
     display: grid;
-    grid-template-rows: 50vh 25vh;
+    grid-template-rows: 55vh 25vh;
     width: 75vw;
     margin:auto;
-    height: 75vh;
+    grid-gap:.5em;
+    /* height: 75vh; */
 }
 
 #controlCenter{
@@ -136,7 +138,7 @@ export default {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    margin-top:.2em;
+    margin-top:.8em;
 
 }
 
@@ -148,10 +150,6 @@ export default {
     display: relative;
 }
 
-.instruction{
-width: 61%;
-margin:auto;
-}
 
 
 .picture{
@@ -225,16 +223,18 @@ button:hover{
 
 /* Mobile Settings */
 @media (max-width: 900px) {
-   
-    .instruction{
-        width: 100%;
+
+    .textHolder{
+        width: 90%;
+        color:#537780;
         margin:auto;
-        font-size: .8em;
+        margin-bottom: 1.1em;
+        font-size: 16px;
     }
 
     #demoTwo{
-        grid-template-rows: 18vh 70vh;
-        font-size: 18px;
+        grid-template-rows: 20vh 80vh;
+        font-size: 16px;
     }
     #input{
     }
