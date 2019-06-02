@@ -1,14 +1,8 @@
 <template>
 <div id = "Demo">
 
-<div class = "IntroHolder">
-    <!-- <div class = "introTitle">
-    <h1> {{title}}</h1>
-    </div> -->
-    <div class = "introContent">
-    {{msg}}
-    </div>
-</div>
+<Intro v-bind:msg="msg"> </Intro>
+
 <div class = "MainContentHolder">
     <div class = "featured section">
         <div class ="featuredTitle">{{title}} </div>
@@ -35,9 +29,10 @@
 
 <script>
 import router from '../router.js'
-
+import Intro from './Intro'
 export default {
     name: 'Demo',
+    components:{Intro},
     data () {
         return {
             title: 'Layout & Typography',
@@ -65,21 +60,12 @@ export default {
     width: 100vw;
     grid-gap: 1.5vh;
     grid-template-columns: 100vw;
-    grid-template-rows: 9vh 75vh 5vh;
+    grid-template-rows: 9vh 1fr;
     background: #f0f0f0;
     color:#537780;
-    font-size: 21px;
+    font-size: 18px;
+    margin-top:0;
 }
-
-.IntroHolder {
-
-}
-
-.introContent{
-    width:61%;
-    margin:auto;
-}
-
 
 .MainContentHolder {
     display: grid;
@@ -129,7 +115,7 @@ export default {
 .fakeImage{
   background-color: #e1e1e1;
   display: block;
-  height: 10vh;
+  height: 12vh;
   margin-bottom: 1rem;
   width: 100%;
 }
@@ -156,27 +142,6 @@ export default {
     
 }
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-button{
-   background: none;
-   width: 300px;
-   height:50px;
-   color: #537780;
-   border: 2px solid #537780;
-   font-size:16px;
-   font-weight:bold;
-   margin-top:4vh;
-}
-button:hover{
-    background:#537780;
-    color:white;
-}
-
 /*  Mobile Settings */
 @media (max-width: 900px) {
     #Demo{
@@ -188,7 +153,7 @@ button:hover{
 
     }
 .MainContentHolder {
-        grid-auto-rows: minmax(200px, auto);
+        grid-auto-rows: minmax(250px, auto);
 
 
 }

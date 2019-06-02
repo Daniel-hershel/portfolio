@@ -1,19 +1,18 @@
 <template>
 <div id = "demoTwo">
-<div class = "textHolder">
-<!-- <div class = "title">
-<h1> {{title}}</h1>
-</div> -->
-    <div class = "instruction" v-if="action">  {{msg}} <br> <br> {{instructionsTwo}} </div>
-    <div class = "instruction"  v-else> {{msg}} <br><br> {{instructionsOne}} </div>
-</div>
+<Intro v-bind:msg="msg"> </Intro>
+
 <div class = "contentHolder">
+
 <div id = "input">
-  <!-- <div>  -->
+  <div class = "instructions">  
+    <div class = "instruction" v-if="!action"> {{instructionsOne}} </div>
+    <div class = "instruction" else> {{instructionsTwo}} </div>
+    </div>
   <input id="keyInput" v-model="keyWord" placeholder="edit me">
   <button class = "miniButton" type="submit" @click.prevent="createImage()">Create</button>
-  <!-- </div> -->
 </div>
+
 <div v-show:if="action" id = "output">
 <div id="poster">
 <div id = "keyword" v-bind:style="{fontSize: fontSize + 'px', color:color}"> {{keyWord}}</div>
@@ -35,14 +34,14 @@
 </button>
 </div>
 </div>
-<button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
+<!-- <button type="submit" @click.prevent="nextDemo()"> Next Demo </button> -->
 
 </div>
 </div>
 
 </div>
 
-<div v-show:if="!action"class = "end">
+<div class = "end">
 <button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
 </div>
 </div>
@@ -50,9 +49,10 @@
 
 <script>
 import router from '../router.js'
-
+import Intro from './Intro.vue'
 export default {
     name: 'demoTwo',
+    components: {Intro},
     data () {
         return {
             fontSize: 72,
@@ -69,14 +69,10 @@ export default {
     },
     methods: {
         nextDemo(){
-            console.log('buttonWorking')
             router.push('dThree')
-
         },
         createImage(){
-            console.log(this.action)
             this.action = true;
-            console.log(this.action)
         }
     }
 }
@@ -94,23 +90,18 @@ export default {
     grid-gap: .5em;
     grid-template-columns: 95vw;
     margin:auto;
-    grid-template-rows: 15vh 75vh 5vh;
+    grid-auto-rows: minmax(100px, auto);
     background: #f0f0f0;
     color:#537780;
     font-size: 21px;
 }
 
-.textHolder{
-    width:68%;
-    margin:auto;
-    font-size: 21px;    
-}
 .contentHolder {
     display: grid;
     /* width: 100vw; */
     margin:auto;
     grid-template-columns: 95vw;
-    grid-template-rows: 18vh 60vh;
+    grid-auto-rows: minmax(200px, auto);
     grid-gap: 2vh;
     /* border: 2px solid #64868e; */
 }
@@ -139,9 +130,17 @@ export default {
     flex-direction: column;
     text-align: center;
     margin-top:.8em;
-
 }
 
+.miniButton { 
+    background: #43dde6;
+    color:#fc5185;
+    border:none;
+    }
+.miniButton:hover{ 
+    color: #43dde6;
+    background:#fc5185;
+    }
 .fontSizing{
     margin: 1.5vh;
 }
@@ -149,8 +148,6 @@ export default {
 #imageHolder{
     display: relative;
 }
-
-
 
 .picture{
 }
@@ -173,9 +170,6 @@ img {
     letter-spacing: .07em;
     font-weight: 900;
     box-shadow: 6px 3px 1px 1px rgba(252, 81, 133, 1);
-
-
-
 }
 input{
     height: 2.8em;
@@ -186,54 +180,20 @@ input{
     margin-top:.8em;
 }
 
-
 input:focus {
     border:none;
 }
-
 
 #keyInput{
     height:3vh;
     font-size: 1.5em;
 }
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-button{
-   background: none;
-   width: 300px;
-   height:50px;
-   color: #537780;
-   border: 2px solid #537780;
-   font-size:16px;
-   font-weight:bold;
-}
-button:hover{
-    background:#537780;
-    color:white;
-}
-
-.miniButton{
-    /* width: 15vw; */
-    
-}
 
 /* Mobile Settings */
 @media (max-width: 900px) {
 
-    .textHolder{
-        width: 90%;
-        color:#537780;
-        margin:auto;
-        margin-bottom: 1.1em;
-        font-size: 16px;
-    }
-
     #demoTwo{
-        grid-template-rows: 20vh 80vh;
+        /* grid-template-rows: 20vh 80vh; */
         font-size: 16px;
     }
     #input{
@@ -241,13 +201,11 @@ button:hover{
     #output{
         width: 100vw;
         grid-template-rows: 65vh 35vh;
-        
     }
     input{
         height: 3.8em;
         width: 40vw;
-    }   
-
+    }  
     #keyInput{
         font-size: 1.2em;
     }

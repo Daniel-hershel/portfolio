@@ -1,17 +1,11 @@
 s<template>
 <div id = "Demo">
 
-<div class = "IntroHolder">
-    <!-- <div class = "introTitle">
-    <h1> {{title}}</h1>
-    </div> -->
-    <div class = "introContent">
-    {{msg}}
-    </div>
-</div>
+<Intro v-bind:msg="msg"> </Intro>
+
 <div class = "MainContentHolder">
     <div class ="animOne animHolder">
-       <div class="wrapper"> {{animationOne.text}} </div>
+       <div class="wrapper ghost"> {{animationOne.text}} </div>
     </div>
     <div class ="animTwo animHolder">
        <div class="wrapper connectedText"> {{animationTwo.text}} </div>
@@ -33,9 +27,10 @@ s<template>
 <script>
 import router from '../router.js'
 import 'particles.js'
-// import 'blast-text'
+import Intro from './Intro'
 export default {
     name: 'demoOne',
+    components: {Intro},
     data () {
         return {
             msg: "This demo uses Velocity.js to create interactive text animations. Particles.js is used to generate the interactive particle field. Vue.js and CSS Grid are used for the layout.",
@@ -52,23 +47,22 @@ export default {
         }
     },
     mounted (){
-
-        let aOne = document.querySelector('.animOne')
-        Velocity(aOne,{textShadowX:'-=3.8px'}, {duration: 8200, easing:'easeOutCirc', loop:true})
-
+        // Animation One
+        let aOne = document.querySelector('.ghost')
+        Velocity(aOne,{textShadowX:'-=3.8px',textShadowBlur:'+=10px',  letterSpacing: '-=.3em'}, {duration: 8200, delay:800, easing:'easeInQuad', loop:true})
+        // Animation Two
         let connectedText = document.querySelector(".connectedText")
         
-        Velocity(connectedText,{letterSpacing:'+=1.2em', lineHeight: '+=600px',rotateY: 5, rotateX: 80, rotateZ: 1  }, {duration: 200, easing:'easeOutCirc'})
-
+        Velocity(connectedText,{letterSpacing:'+=1.2em', lineHeight: '+=600px',rotateY: 5, rotateX: 80, rotateZ: 1  }, {duration: 200, easing:'easeInQuart'})
+        // Animation Three
         let quote = document.querySelector(".quote")        
         Velocity(quote,{textShadowY:'-=3.8px'}, {duration: 8200, easing:'easeOutCirc', loop:true})
 
-        this.initParticles()
+        // Initiate Hover Effect for Animation 2
         this.connectedText()
 
-
-
-
+        // Initiate Particle Systems For Animation 3
+        this.initParticles()
     },
     methods: {
         connectedText(){
@@ -78,12 +72,12 @@ export default {
                 console.log(this)
                 // $element = this;
                 // console.log($element)
-            Velocity(connectedText, { letterSpacing: 0, lineHeight:0,rotateY: 0, rotateX: 0, rotateZ: 0  },{ duration: 500}
+            Velocity(connectedText, { letterSpacing: 0, lineHeight:0,rotateY: 0, rotateX: 0, rotateZ: 0  },{ delay:0,duration: 600, easing:'easeInSine'}
             )
             })
             connectedText.addEventListener("mouseout", function() {
                 //mouse off the item
-            Velocity(connectedText, { letterSpacing:'+=1.3em', lineHeight: '+=500px',rotateY: 5, rotateX: 80, rotateZ: 1  },{ duration: 800}
+            Velocity(connectedText, { letterSpacing:'+=1.3em', lineHeight: '+=500px',rotateY: 5, rotateX: 80, rotateZ: 1  },{ duration: 200}
             );
             })
 
@@ -156,31 +150,23 @@ export default {
 
 #Demo{
     display: grid;
-    width: 100vw;
-    grid-gap: 3vh;
+    width: 95vw;
     grid-template-columns: 95vw;
     margin:auto;
     grid-template-rows: 5vh 70vh 10vh;
     background: #f0f0f0;    
     color:#537780;
     font-size: 21px;    
-    /* justify-content: center; */
-    /* border: 2px solid #64868e; */
 }
 
-.IntroHolder {
 
-}
-.introContent{ 
-    width:61%;
-    margin:auto;
-}
 .MainContentHolder {
+    /* border: 2px solid red; */
     display: grid;
     width: 90vw;
     margin:auto;
     padding: 1vw;
-    grid-gap: 1em;
+    grid-gap: .5em;
     background: #537780;
     grid-template-columns: 44vw 1fr;
     grid-template-rows:30vh 30vh;
@@ -197,17 +183,16 @@ export default {
     flex-direction: column;
     text-align: center;
     height:30vh;
-
-    /* position:relative; */
 }
 .animOne{
     grid-area: topLeft;
     background:#64868e;
-    font-size: 54px;
+    font-size: 45px;
     font-family: 'Oswald';
     font-weight:900;
-    letter-spacing: .5em;
-    text-shadow:0px 0px #f3fbf1;
+    letter-spacing: .3em;
+    /* box-shadow: 1px 2px 5px 5px #f3fbf1; */
+    text-shadow: 0px 0px 0px rgba(243, 251, 241, 1);
     color: #64868e;
 }
 
@@ -252,7 +237,13 @@ export default {
 
     #Demo{
     grid-template-rows: 15vh 95vh 10vh;
-    font-size: 16px;    
+    font-size: 16px;
+    /* grid-auto-rows: minmax(15vh, auto); */
+    width:90vw;
+    grid-template-columns: 90vw;
+    margin:auto; 
+    /* border: 2px solid yellow; */
+
     }
 
     .quote{
@@ -270,8 +261,6 @@ export default {
         "bottom";
     }
 
-    .introContent{
-        width: 95%;
-    }
+
 }
 </style>
