@@ -9,7 +9,7 @@ import DemoFour from "./components/DemoFour.vue";
 Vue.use(Router);
 
 export default new Router({
-  mode: "history",
+  mode: "hash",
   base: process.env.BASE_URL,
   routes: [
     {
@@ -19,7 +19,7 @@ export default new Router({
     },
     {
       path: "/dOne",
-      name: "demoOne",
+      name: "dOne",
       component: DemoOne
     },
     {

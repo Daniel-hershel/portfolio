@@ -12,6 +12,8 @@
   </div>  
   <div class = "ti section">
     <div id="title" class = "wrapper">{{title}}</div>
+    <div id = "contact"> {{contact}} </div>
+
   </div>  
 
 </div>
@@ -24,6 +26,7 @@ export default {
   data() {
     return{
       name: "Daniel Silber-Baker",
+      contact: "Contact me at: Daniel.h.silber.baker@gmail.com",
       title:"Designer & Developer Full Stack Interactive Web Experiences",
       blurb:"Impassioned designer and developer experienced in building content-rich interactive web experiences that communicate complex ideas. Adept at transforming a myriad of information including words, pictures and data, into compelling, easy to follow interactive experiences that capture attention and engage audiences."
     }

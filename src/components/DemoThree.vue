@@ -33,7 +33,7 @@ export default {
     components: {Intro},
     data () {
         return {
-            msg: "This demo uses Velocity.js to create interactive text animations. Particles.js is used to generate the interactive particle field. Vue.js and CSS Grid are used for the layout.",
+            msg: "This demo uses Velocity.js to create interactive text animations and Particles.js to generate the interactive particles. Layout with Vue.js and CSS Grid.",
             title: "Demo Three",
             animationOne: {
                 text: "Ghost Text"
@@ -153,7 +153,7 @@ export default {
     width: 95vw;
     grid-template-columns: 95vw;
     margin:auto;
-    grid-template-rows: 5vh 70vh 10vh;
+    grid-template-rows: 9vh 70vh 10vh;
     background: #f0f0f0;    
     color:#537780;
     font-size: 21px;    
@@ -228,7 +228,7 @@ export default {
 }
 
 .EndHolder {
-
+    margin-top: 2em;
 }
 
 
@@ -236,11 +236,12 @@ export default {
 @media (max-width: 900px) {
 
     #Demo{
-    grid-template-rows: 15vh 95vh 10vh;
+    grid-template-rows: 20vh 90vh 10vh;
     font-size: 16px;
-    /* grid-auto-rows: minmax(15vh, auto); */
-    width:90vw;
-    grid-template-columns: 90vw;
+    grid-gap:1.5em;
+    /* grid-auto-rows: minmax(250px, auto); */
+    width:95vw;
+    grid-template-columns: 95vw;
     margin:auto; 
     /* border: 2px solid yellow; */
 
@@ -252,9 +253,9 @@ export default {
         margin:auto;
     }
     .MainContentHolder {
-        width:90vw;
+        width:95vw;
         margin:auto;
-        grid-template-columns:90vw;
+        grid-template-columns:95vw;
         grid-template-areas:
         "topLeft"
         "topRight"

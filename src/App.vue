@@ -51,7 +51,7 @@ button{
    border: 2px solid #537780;
    font-size:16px;
    font-weight:bold;
-   margin-top: 1em;
+   margin-top: 1.5em;
 }
 button:hover{
     background:#537780;

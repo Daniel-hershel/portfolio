@@ -25,7 +25,9 @@ export default {
 .textHolder{
     width:68%;
     margin:auto;
-    font-size: 21px;    
+    font-size: 20px;    
+    margin-bottom: .8em;
+
 }
 /* Mobile */
 @media (max-width: 900px) {
