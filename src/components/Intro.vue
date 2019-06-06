@@ -21,7 +21,9 @@ export default {
     margin:auto;
     font-size: 20px;
     margin-bottom: 1.5em;
-    
+    background:#f9f9f9;
+    border: 2px solid #bcbab8;
+
 
 }
 /* Mobile */
