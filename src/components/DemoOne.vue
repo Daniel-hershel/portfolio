@@ -36,8 +36,8 @@ export default {
         mouseOver(thing, done){
             console.log(thing)
             Velocity(thing.target, {
-                scale: 1.1,   translateZ: '-=2em',
-                zIndex:100, skewX: 5, boxShadowBlur: '+=2em'
+                scale: 1.4,   translateZ: '-=2em',
+                zIndex:100, skewX: 2.5, boxShadowBlur: '+=2em'
             },{ duration: 300, complete:done })
         },
         mouseOut(thing, done){
@@ -76,8 +76,8 @@ export default {
 .picture{
     width: 250px;
     height: 137px;
-    border: 9px solid #43dde6;
-    box-shadow: 9px 5px 1px 1px #fc5185;
+    border: 5px solid #43dde6;
+    box-shadow: 1px 1px 1px 1px #fc5185;
 }
 
 .pictureHolder{
@@ -86,7 +86,7 @@ export default {
     align-items: center;
     flex-direction: column;
     padding: 1em;
-    margin: 2em;
+    margin: 2.5em;
     /* border: 2px solid black; */
 }
 /* Desktop Settings */
@@ -95,9 +95,18 @@ export default {
     grid-auto-rows: minmax(200px, auto);
     font-size: 21px;    
 }
+#imagesHolder{
+    width:80vw;
+    margin-left:auto;
+    margin-right:auto;
+    grid-auto-rows: minmax(200px, auto);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2.5em;
+}
+
 .picture{
-    width: 350px;
-    height: 200px;
+    width: 275px;
+    height: 160px;
 }
 
 
