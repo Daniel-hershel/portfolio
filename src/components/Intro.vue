@@ -19,12 +19,14 @@ export default {
 .textHolder{
     width:68%;
     margin:auto;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 1.5em;
-    background:#f9f9f9;
-    border: 2px solid #bcbab8;
-
-
+    padding: 1.1em;
+    background:#f3fbf1;
+    color:#537780;
+    -moz-box-shadow: 3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 5px 6px #ccc;
 }
 /* Mobile */
 @media (max-width: 900px) {

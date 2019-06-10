@@ -37,7 +37,7 @@ export default {
             console.log(thing)
             Velocity(thing.target, {
                 scale: 1.4,   translateZ: '-=2em',
-                zIndex:100, skewX: 2.5, boxShadowBlur: '+=2em'
+                zIndex:100, skewX: .5, boxShadowBlur: '+=2em'
             },{ duration: 300, complete:done })
         },
         mouseOut(thing, done){
@@ -56,7 +56,7 @@ export default {
     width: 100vw;
     grid-gap: 4vh;
     grid-template-columns: 100vw;
-    grid-template-rows: 20vh 1fr;
+    grid-template-rows: 25vh 1fr;
     background: #f0f0f0;
     color:#537780;
     font-size:16px;
@@ -69,8 +69,8 @@ export default {
     margin-right:auto;
     grid-auto-rows: minmax(200px, auto);
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 5vw;
     color:#0C385F;
+    grid-gap:3.5em;
 }
 
 .picture{
@@ -86,22 +86,21 @@ export default {
     align-items: center;
     flex-direction: column;
     padding: 1em;
-    margin: 2.5em;
+    margin: .5em;
     /* border: 2px solid black; */
 }
 /* Desktop Settings */
 @media (min-width: 900px) {
 #Demo{
     grid-auto-rows: minmax(200px, auto);
-    font-size: 21px;    
+    font-size: 21px;  
 }
 #imagesHolder{
     width:80vw;
     margin-left:auto;
     margin-right:auto;
     grid-auto-rows: minmax(200px, auto);
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 2.5em;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 }
 
 .picture{

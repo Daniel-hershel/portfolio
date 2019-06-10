@@ -1,14 +1,14 @@
-s<template>
+<template>
 <div id = "Demo">
 
 <Intro v-bind:msg="msg"> </Intro>
 
 <div class = "MainContentHolder">
     <div class ="animOne animHolder">
-       <div class="wrapper ghost"> {{animationOne.text}} </div>
+       <div class="wrapper ghost" v-on:mouseover="ghostMouseOver" v-on:mouseout="ghostMouseOut" > {{animationOne.text}} </div>
     </div>
     <div class ="animTwo animHolder">
-       <div class="wrapper connectedText"> {{animationTwo.text}} </div>
+       <div class="wrapper connectedText" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" > {{animationTwo.text}} </div>
     </div>
     <div class ="animThree animHolder">
         <div id="particles-js">
@@ -29,7 +29,7 @@ import router from '../router.js'
 import 'particles.js'
 import Intro from './Intro'
 export default {
-    name: 'demoOne',
+    name: 'demoThree',
     components: {Intro},
     data () {
         return {
@@ -49,39 +49,41 @@ export default {
     mounted (){
         // Animation One
         let aOne = document.querySelector('.ghost')
-        Velocity(aOne,{textShadowX:'-=3.8px',textShadowBlur:'+=10px',  letterSpacing: '-=.3em'}, {duration: 8200, delay:800, easing:'easeInQuad', loop:true})
+        Velocity(aOne,{textShadowX:'-=3.8px',textShadowBlur:'+=10px',  letterSpacing: '-=.2em'}, {duration: 8200, delay:800, easing:'easeInQuad', loop:true})
         // Animation Two
         let connectedText = document.querySelector(".connectedText")
         
-        Velocity(connectedText,{letterSpacing:'+=1.2em', lineHeight: '+=600px',rotateY: 5, rotateX: 80, rotateZ: 1  }, {duration: 200, easing:'easeInQuart'})
+        Velocity(connectedText,{letterSpacing:'+=1.2em', lineHeight: '+=500px',rotateY: 5, rotateX: 80, rotateZ: 1  }, {duration: 200, easing:'easeInQuart'})
         // Animation Three
         let quote = document.querySelector(".quote")        
         Velocity(quote,{textShadowY:'-=3.8px'}, {duration: 8200, easing:'easeOutCirc', loop:true})
 
-        // Initiate Hover Effect for Animation 2
-        this.connectedText()
 
         // Initiate Particle Systems For Animation 3
         this.initParticles()
     },
     methods: {
-        connectedText(){
-            let connectedText = document.querySelector(".connectedText")
-            connectedText.addEventListener("mouseover", 
-            function() {
-                console.log(this)
-                // $element = this;
-                // console.log($element)
-            Velocity(connectedText, { letterSpacing: 0, lineHeight:0,rotateY: 0, rotateX: 0, rotateZ: 0  },{ delay:0,duration: 600, easing:'easeInSine'}
+        mouseOver(thing,done){
+               Velocity(thing.target, { letterSpacing: 0, lineHeight:0,rotateY: 0, rotateX: 0, rotateZ: 0  },{ delay:0,duration: 600, easing:'easeInSine', complete:done}
             )
-            })
-            connectedText.addEventListener("mouseout", function() {
-                //mouse off the item
-            Velocity(connectedText, { letterSpacing:'+=1.3em', lineHeight: '+=500px',rotateY: 5, rotateX: 80, rotateZ: 1  },{ duration: 200}
-            );
-            })
 
         },
+
+        mouseOut(thing,done){
+                //mouse off the item
+            Velocity(thing.target,'reverse')
+        },
+
+        ghostMouseOver(thing, done){
+            //  Velocity(thing.target, { letterSpacing: '-=.3em',rotateY: -5,  rotateZ: 10  },{ duration:300, easing:'easeInSine', complete:done} )
+
+        },
+
+        ghostMouseOut(thing,done){
+            //  Velocity(thing.target,'reverse')
+
+        },
+      
 
         initParticles(){
             /* Particles */
@@ -152,20 +154,18 @@ export default {
     display: grid;
     width: 95vw;
     grid-template-columns: 95vw;
+    grid-auto-rows: minmax(100px, auto);
     margin:auto;
-    grid-template-rows: 9vh 70vh 10vh;
     background: #f0f0f0;    
     color:#537780;
-    font-size: 21px;    
+    font-size: 21px;   
 }
 
 
 .MainContentHolder {
-    /* border: 2px solid red; */
     display: grid;
     width: 90vw;
     margin:auto;
-    padding: 1vw;
     grid-gap: .5em;
     background: #537780;
     grid-template-columns: 44vw 1fr;
@@ -233,10 +233,9 @@ export default {
 
 
 /* Mobile Settings */
-@media (max-width: 900px) {
+@media (max-width: 800px) {
 
     #Demo{
-    grid-template-rows: 20vh 90vh 10vh;
     font-size: 16px;
     grid-gap:1.5em;
     /* grid-auto-rows: minmax(250px, auto); */
