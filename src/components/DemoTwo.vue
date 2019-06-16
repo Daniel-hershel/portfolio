@@ -55,7 +55,7 @@ export default {
     data () {
         return {
             fontSize: 52,
-            color: "#fffff8",
+            color: "white",
             title: 'Create Your Own Poster',
             title: "Demo Two",
             msg: "This demo uses conditional rendering, text binding, and style control for an interactive poster making environment.",
@@ -129,6 +129,7 @@ export default {
     background: #43dde6;
     color:#fc5185;
     border:none;
+    width:150px;
     }
 .miniButton:hover{ 
     color: #43dde6;

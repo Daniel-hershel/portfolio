@@ -4,8 +4,8 @@
 <Intro v-bind:msg="msg"> </Intro>
 
 <div class = "MainContentHolder">
-    <div class ="animOne animHolder">
-       <div class="wrapper ghost" v-on:mouseover="ghostMouseOver" v-on:mouseout="ghostMouseOut" > {{animationOne.text}} </div>
+    <div class ="animOne animHolder" v-on:mouseover="ghostMouseOver" v-on:mouseout="ghostMouseOut">
+       <div class="wrapper ghost" > {{animationOne.text}} </div>
     </div>
     <div class ="animTwo animHolder">
        <div class="wrapper connectedText" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" > {{animationTwo.text}} </div>
@@ -91,7 +91,7 @@ export default {
             {"particles":
             {"number":
 
-            {"value":500,"density":
+            {"value":800,"density":
 
             {"enable":true,"value_area":1200}},
 
@@ -152,8 +152,8 @@ export default {
 
 #Demo{
     display: grid;
-    width: 95vw;
-    grid-template-columns: 95vw;
+    width: 85vw;
+    grid-template-columns: 85vw;
     grid-auto-rows: minmax(100px, auto);
     margin:auto;
     background: #f0f0f0;    
@@ -164,12 +164,12 @@ export default {
 
 .MainContentHolder {
     display: grid;
-    width: 90vw;
+    width: 80vw;
     margin:auto;
     grid-gap: .5em;
     background: #537780;
-    grid-template-columns: 44vw 1fr;
-    grid-template-rows:30vh 30vh;
+    grid-template-columns: 40vw 1fr;
+    grid-template-rows:30vh 50vh;
     grid-template-areas:
     "topLeft topRight"
     "bottom bottom";
@@ -182,7 +182,7 @@ export default {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    height:30vh;
+    /*height:30vh;*/
 }
 .animOne{
     grid-area: topLeft;

@@ -88,7 +88,6 @@ export default {
 #Demo{
     grid-template-columns: 980px;
     margin:auto;
-    border: 2px solid red;
     grid-auto-rows: minmax(200px, auto);
     font-size: 16px;
     color:#537780;

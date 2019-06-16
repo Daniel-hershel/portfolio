@@ -6,7 +6,7 @@
     </div>  
   <div class = "bl section">
     <div id= "blurb" class = "wrapper">{{blurb}}</div>
-    <div class = "wrapper">
+    <div class = "button wrapper">
     <button type="submit" @click.prevent="nextDemo()"> First Demo </button>
     </div>  
   </div>  
@@ -79,8 +79,12 @@ export default {
   text-align:center;
 }
 
+.button{
+  display:flex;
+  align-items: center;
+}
 /* Desktop*/
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   #Home{
       grid-template-columns:repeat(5, 1fr);
       grid-template-rows: 15vh 1fr;

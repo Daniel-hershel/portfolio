@@ -29,9 +29,9 @@ export default {
     box-shadow: 3px 3px 5px 6px #ccc;
 }
 /* Mobile */
-@media (max-width: 900px) {
+@media (max-width: 700px) {
 .textHolder{
-     width: 90%;
+    width: 85%;
     color:#537780;
     margin:auto;
     margin-bottom: 1.1em;
