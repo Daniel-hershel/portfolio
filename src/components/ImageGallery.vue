@@ -5,7 +5,7 @@
 
  </div>
 <div class = "thumbnailsWrapper"> 
-    <div class = "thumbnails" v-for="(topic, index) in topics">
+    <div class = "thumbnails" v-for="(topic, index) in topics" >
     <img :id="topic" class ="picture" @click="onClick" v-bind:src="'https://source.unsplash.com/1600x900/?'+topic"/>
      </div>
      </div>
@@ -28,8 +28,14 @@ export default {
         activeIndex: {
             type:Number
         },
-        bar:{
-            type: String
+        onhover:{
+            type: Function
+        },
+        unhover:{
+            type: Function
+        },
+        hover:{
+            type:Boolean
         }
         
         
@@ -79,6 +85,12 @@ export default {
     padding: .2em;
 }
 
+.picture:hover{
+    border: 2px solid #0C385F;
+
+}
+.active{
+}
 img {
     max-width: 900px;
 }

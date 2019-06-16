@@ -24,9 +24,10 @@ export default {
     data () {
         return {
             topics: ['oceans', 'stars', 'mountains', 'listen', 'beyond', 'synchronize'],
-            msg: "This demo uses Vue.js, the Unsplash photo API, CSS Grid, and Velocity.js to create a responsive photo gallery with hover animation. ",
+            msg: "This demo uses Vue.js, the Unsplash photo API, & CSS Grid,to create a responsive photo gallery. Click on any of the thumbnail images to feature image. ",
             title: 'Responsive Image Gallery With Hover Effect',
-            activeIndex: 2
+            activeIndex: 2,
+            hover: false
         }
     },
     mounted() {
@@ -43,7 +44,8 @@ export default {
             
             console.log(this.activeIndex)
 
-        }
+        },
+       
     }
 }
 </script>
