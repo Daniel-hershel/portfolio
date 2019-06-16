@@ -32,6 +32,10 @@ export default {
     /* border: 2px solid #625757; */
 }
 
+#content{
+    padding: 1.5em;
+
+}
 button{
    background: none;
    width: 300px;
