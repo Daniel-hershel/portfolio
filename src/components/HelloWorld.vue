@@ -6,13 +6,13 @@
     </div>  
   <div class = "bl section">
     <div id= "blurb" class = "wrapper">{{blurb}}</div>
-    <div class = "wrapper">
+    <div class = "button wrapper">
     <button type="submit" @click.prevent="nextDemo()"> First Demo </button>
     </div>  
   </div>  
   <div class = "ti section">
     <div id="title" class = "wrapper">{{title}}</div>
-    <div id = "contact"> {{contact}} </div>
+    
 
   </div>  
 
@@ -26,7 +26,6 @@ export default {
   data() {
     return{
       name: "Daniel Silber-Baker",
-      contact: "Contact me at: Daniel.h.silber.baker@gmail.com",
       title:"Designer & Developer Full Stack Interactive Web Experiences",
       blurb:"Impassioned designer and developer experienced in building content-rich interactive web experiences that communicate complex ideas. Adept at transforming a myriad of information including words, pictures and data, into compelling, easy to follow interactive experiences that capture attention and engage audiences."
     }
@@ -49,12 +48,11 @@ export default {
 /* Mobile First */
 #Home{
   display: grid;
-  width: 95vw;
+  width: 80vw;
   grid-auto-rows: minmax(100px, auto);
   margin:auto;
   /* margin-top: 10vh; */
   grid-gap: 1vh;
-  padding: 2vh;
   grid-template-areas:
   "hd"
   "ti"
@@ -64,7 +62,8 @@ export default {
   font-size: 18px;
 }
 #name{
-  font-size: 3em;
+  font-size: 2.8em;
+  margin:auto;
   font-weight: bold;
   text-align: center;
 }
@@ -72,14 +71,26 @@ export default {
 #title{
   font-size: 1.9em;
   font-weight: bold;
+  text-align: center;
+  line-height: 1.5em;
 }
 
-@media (min-width: 700px) {
+#blurb {
+  text-align:center;
+}
+
+.button{
+  display:flex;
+  align-items: center;
+}
+/* Desktop*/
+@media (min-width: 900px) {
   #Home{
-      margin-top: 10vh;
       grid-template-columns:repeat(5, 1fr);
       grid-template-rows: 15vh 1fr;
-      height: 100vh;
+      width:85vw;
+      margin:auto;
+      margin-top: 10vh;
       grid-template-areas:
       "hd hd hd hd hd hd hd"
       "ti ti ti bl bl bl bl";
@@ -89,10 +100,20 @@ export default {
     font-size: 4em;
     text-align: left;
 
+
   }
 
   #title{
-  font-size: 2.9em;
+    font-size: 2.9em;
+    text-align: left;
+    line-height: 1.1em;
+
+
+
+  }
+
+  #blurb{
+      text-align: right;
 
   }
 }

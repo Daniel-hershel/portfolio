@@ -1,28 +1,32 @@
 <template>
 <div id = "Demo">
+<Intro v-bind:msg="msg"> </Intro>
 
-<IntroWB :onClick="nextDemo" v-bind:msg="msg"></IntroWB>
-
-<div id = "imagesHolder">
-    <div class = "pictureHolder"  v-for="topic in topics">
-    <img class ="picture" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" v-bind:src="'https://source.unsplash.com/1600x900/?'+topic"/>
-     </div>
+<ImageGallery
+v-bind:topics="topics"
+v-bind:activeIndex="activeIndex"
+@clicked="featureImage"
+>
+</ImageGallery>
+<div class = "EndHolder">
+<button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
 </div>
-
 </div>
 </template>
 
 <script>
 import router from '../router.js'
-import IntroWB from './IntroWButton.vue'
+import Intro from './Intro.vue'
+import ImageGallery from './ImageGallery.vue'
 export default {
     name: 'DemoOne',
-    components:{IntroWB},
+    components:{Intro, ImageGallery},
     data () {
         return {
             topics: ['oceans', 'stars', 'mountains', 'listen', 'beyond', 'synchronize'],
             msg: "This demo uses Vue.js, the Unsplash photo API, CSS Grid, and Velocity.js to create a responsive photo gallery with hover animation. ",
             title: 'Responsive Image Gallery With Hover Effect',
+            activeIndex: 2
         }
     },
     mounted() {
@@ -33,15 +37,12 @@ export default {
         nextDemo(){
             router.push('dTwo')
         },
-        mouseOver(thing, done){
-            console.log(thing)
-            Velocity(thing.target, {
-                scale: 1.4,   translateZ: '-=2em',
-                zIndex:100, skewX: 2.5, boxShadowBlur: '+=2em'
-            },{ duration: 300, complete:done })
-        },
-        mouseOut(thing, done){
-            Velocity(thing.target,'reverse')
+        featureImage (e){
+
+            this.activeIndex = this.topics.indexOf(e);
+            
+            console.log(this.activeIndex)
+
         }
     }
 }
@@ -54,59 +55,18 @@ export default {
 #Demo{
     display: grid;
     width: 100vw;
-    grid-gap: 4vh;
     grid-template-columns: 100vw;
-    grid-template-rows: 20vh 1fr;
+    grid-auto-rows: minmax(100px, auto);
     background: #f0f0f0;
     color:#537780;
     font-size:16px;
 }
 
-#imagesHolder{
-    display:grid;
-    width:95vw;
-    margin-left:auto;
-    margin-right:auto;
-    grid-auto-rows: minmax(200px, auto);
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 5vw;
-    color:#0C385F;
-}
-
-.picture{
-    width: 250px;
-    height: 137px;
-    border: 5px solid #43dde6;
-    box-shadow: 1px 1px 1px 1px #fc5185;
-}
-
-.pictureHolder{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 1em;
-    margin: 2.5em;
-    /* border: 2px solid black; */
-}
 /* Desktop Settings */
 @media (min-width: 900px) {
 #Demo{
-    grid-auto-rows: minmax(200px, auto);
-    font-size: 21px;    
-}
-#imagesHolder{
-    width:80vw;
-    margin-left:auto;
-    margin-right:auto;
-    grid-auto-rows: minmax(200px, auto);
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 2.5em;
-}
-
-.picture{
-    width: 275px;
-    height: 160px;
+    grid-auto-rows: minmax(100px, auto);
+    font-size: 21px;  
 }
 
 

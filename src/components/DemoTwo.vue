@@ -1,13 +1,12 @@
 <template>
-<div id = "demoTwo">
+<div id = "DemoTwo">
 <Intro v-bind:msg="msg"> </Intro>
 
 <div class = "contentHolder">
 
 <div id = "input">
   <div class = "instructions">  
-    <div class = "instruction" v-if="!action"> {{instructionsOne}} </div>
-    <div class = "instruction" else> {{instructionsTwo}} </div>
+    <div class = "instruction"> {{instructionsOne}} </div>
     </div>
   <input id="keyInput" v-model="keyWord" placeholder="edit me">
   <button class = "miniButton" type="submit" @click.prevent="createImage()">Create</button>
@@ -51,17 +50,17 @@
 import router from '../router.js'
 import Intro from './Intro.vue'
 export default {
-    name: 'demoTwo',
+    name: 'DemoTwo',
     components: {Intro},
     data () {
         return {
-            fontSize: 72,
-            color: "#fffff8",
+            fontSize: 52,
+            color: "white",
             title: 'Create Your Own Poster',
             title: "Demo Two",
             msg: "This demo uses conditional rendering, text binding, and style control for an interactive poster making environment.",
-            instructionsOne: 'To begin enter any word or short phrase into the box below and press "Create" to create an interactive poster with your word.',
-            instructionsTwo:'To start a new poster, or to get a new image, simply start typing in the box and watch the poster genreate in real time!',
+            instructionsOne: 'To begin enter any word or short phrase into the box below and press "Create" to generate an interactive poster with your word.',
+            // instructionsTwo:'To start a new poster, or to get a new image, simply start typing in the box and watch the poster genreate in real time!',
             instructionsThree: 'You can adjust the text style with the controls below your generated image.',
             keyWord: '',
             action: false
@@ -83,29 +82,25 @@ export default {
 
 @import url('https://fonts.googleapis.com/css?family=Istok+Web:700|Marck+Script|Maven+Pro:700&display=swap');
 
-#demoTwo{
-    display: grid;
-    /* height: 100vh; */
-    width: 95vw;
-    grid-gap: .5em;
-    grid-template-columns: 95vw;
+#DemoTwo{
+    grid-template-columns: 375px;
     margin:auto;
-    grid-auto-rows: minmax(100px, auto);
-    background: #f0f0f0;
+    grid-auto-rows: minmax(200px, auto);
+    font-size: 16px;
     color:#537780;
-    font-size: 21px;
+    margin-bottom: 2.5em;
 }
 
 .contentHolder {
     display: grid;
-    /* width: 100vw; */
     margin:auto;
-    grid-template-columns: 95vw;
     grid-auto-rows: minmax(200px, auto);
-    grid-gap: 2vh;
-    /* border: 2px solid #64868e; */
+    grid-gap: 2vh;    
 }
 
+.instructions{
+    width: 65%;
+}
 #input{
     display:flex;
     align-items: center;
@@ -116,11 +111,9 @@ export default {
 
 #output{
     display: grid;
-    grid-template-rows: 55vh 25vh;
-    width: 75vw;
+    grid-auto-rows: minmax(200px, auto);
     margin:auto;
     grid-gap:.5em;
-    /* height: 75vh; */
 }
 
 #controlCenter{
@@ -136,6 +129,7 @@ export default {
     background: #43dde6;
     color:#fc5185;
     border:none;
+    width:150px;
     }
 .miniButton:hover{ 
     color: #43dde6;
@@ -152,8 +146,9 @@ export default {
 .picture{
 }
 img {
-    width: 73vw;
-    height: 49vh;
+ 
+    width: 332px;
+    height: 190px;
     padding: .5vw;
     border: 9px solid #43dde6;
     box-shadow: 9px 5px 1px 1px #fc5185;
@@ -161,7 +156,7 @@ img {
 
 #keyword{
     position:absolute;
-    transform: translate(25vw, 20vh);
+    transform: translate(100px, 70px);
     background:rgba(68, 68, 68, .4);
     font-family: 'Maven Pro', sans-serif;
     /* font-family: 'Istok Web', sans-serif; */
@@ -171,47 +166,39 @@ img {
     font-weight: 900;
     box-shadow: 6px 3px 1px 1px rgba(252, 81, 133, 1);
 }
-input{
-    height: 2.8em;
-    width: 20vw;
-    border: 2px solid #537780;
-    text-align: center;
-    background-color: #f3fbf1;
-    margin-top:.8em;
-}
 
-input:focus {
-    border:none;
-}
 
 #keyInput{
-    height:3vh;
-    font-size: 1.5em;
+    font-size: 1.1em;
 }
 
-/* Mobile Settings */
-@media (max-width: 900px) {
+/* Desktop Settings */
 
-    #demoTwo{
-        /* grid-template-rows: 20vh 80vh; */
-        font-size: 16px;
-    }
-    #input{
-    }
-    #output{
-        width: 100vw;
-        grid-template-rows: 65vh 35vh;
-    }
-    input{
-        height: 3.8em;
-        width: 40vw;
-    }  
-    #keyInput{
-        font-size: 1.2em;
-    }
-    .miniButton{
-        width: 25vw;
+@media (min-width: 700px) {
+
+    img{
+        width: 550px;
+        height: 320px;
     }
 
+}
+@media (min-width: 900px) {
+#DemoTwo{
+    grid-auto-rows: minmax(200px, auto);
+    font-size: 20px;    
+}
+#output{
+    width: 900px;
+}
+img {
+    width: 750px;
+    height: 420px;
+  
+}
+#keyword{
+    position:absolute;
+    transform: translate(25vw, 20vh);
+
+}
 }
 </style>
