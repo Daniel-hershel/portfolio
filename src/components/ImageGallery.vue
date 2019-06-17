@@ -27,18 +27,7 @@ export default {
         },
         activeIndex: {
             type:Number
-        },
-        onhover:{
-            type: Function
-        },
-        unhover:{
-            type: Function
-        },
-        hover:{
-            type:Boolean
-        }
-        
-        
+        } 
     }
 }
 </script>
