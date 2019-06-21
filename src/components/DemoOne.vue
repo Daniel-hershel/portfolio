@@ -24,7 +24,7 @@ export default {
     data () {
         return {
             topics: ['oceans', 'stars', 'mountains', 'listen', 'beyond', 'synchronize'],
-            msg: "This demo uses Vue.js, the Unsplash photo API, & CSS Grid,to create a responsive photo gallery. Click on any of the thumbnail images to feature image. ",
+            msg: "This demo uses Vue.js, the Unsplash photo API, & CSS Grid,to create a responsive photo gallery.",
             title: 'Responsive Image Gallery With Hover Effect',
             activeIndex: 2,
             hover: false

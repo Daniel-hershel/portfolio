@@ -75,7 +75,7 @@ export default {
 }
 
 .picture:hover{
-    border: 2px solid #0C385F;
+    border: 1px solid #0C385F;
 
 }
 .active{
