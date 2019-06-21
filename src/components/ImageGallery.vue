@@ -27,18 +27,7 @@ export default {
         },
         activeIndex: {
             type:Number
-        },
-        onhover:{
-            type: Function
-        },
-        unhover:{
-            type: Function
-        },
-        hover:{
-            type:Boolean
-        }
-        
-        
+        } 
     }
 }
 </script>
@@ -86,7 +75,7 @@ export default {
 }
 
 .picture:hover{
-    border: 2px solid #0C385F;
+    border: 1px solid #0C385F;
 
 }
 .active{
