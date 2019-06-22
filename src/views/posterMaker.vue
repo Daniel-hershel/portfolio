@@ -48,7 +48,7 @@
 
 <script>
 import router from '../router.js'
-import Intro from './Intro.vue'
+import Intro from '../components/Intro.vue'
 export default {
     name: 'DemoTwo',
     components: {Intro},
@@ -68,7 +68,7 @@ export default {
     },
     methods: {
         nextDemo(){
-            router.push('dThree')
+            router.push('dFour')
         },
         createImage(){
             this.action = true;

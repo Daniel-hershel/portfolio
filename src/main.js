@@ -5,8 +5,6 @@ import Velocity from 'velocity-animate'
 
 Object.defineProperty(Vue.prototype, '$vel', { value: Velocity });
 
-
-
 Vue.config.productionTip = false;
 
 new Vue({

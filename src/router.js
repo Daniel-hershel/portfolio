@@ -1,10 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./components/HelloWorld.vue";
-import DemoOne from "./components/DemoOne.vue";
-import DemoTwo from "./components/DemoTwo.vue";
-import DemoThree from "./components/DemoThree.vue";
-import DemoFour from "./components/DemoFour.vue";
 
 Vue.use(Router);
 
@@ -19,24 +15,25 @@ export default new Router({
     },
     {
       path: "/dOne",
-      name: "dOne",
-      component: DemoOne
+      name: "iGallery",
+      component: ()=>import('./views/iGallery.vue')
     },
     {
       path: "/dTwo",
-      name: "demoTwo",
-      component: DemoTwo
+      name: "weatherJournal",
+      component: ()=> import('./views/weatherJournal.vue')
     },
     {
       path: "/dThree",
-      name: "demoThree",
-      component: DemoThree
+      name: "posterMaker",
+      component: ()=> import('./views/posterMaker.vue')
     },
     {
       path: "/dFour",
-      name: "demoFour",
-      component: DemoFour
+      name: "interactionAnimation",
+      component: ()=> import('./views/interactionAnimation.vue')
     },
+  
     {
       path: "/about",
       name: "about",

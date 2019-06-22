@@ -16,10 +16,10 @@ v-bind:activeIndex="activeIndex"
 
 <script>
 import router from '../router.js'
-import Intro from './Intro.vue'
-import ImageGallery from './ImageGallery.vue'
+import Intro from '../components/Intro.vue'
+import ImageGallery from '../components/ImageGallery.vue'
 export default {
-    name: 'DemoOne',
+    name: 'iGallery',
     components:{Intro, ImageGallery},
     data () {
         return {
@@ -59,7 +59,7 @@ export default {
     width: 100vw;
     grid-template-columns: 100vw;
     grid-auto-rows: minmax(100px, auto);
-    background: #f0f0f0;
+    /* background: #f0f0f0; */
     color:#537780;
     font-size:16px;
 }

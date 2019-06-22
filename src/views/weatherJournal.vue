@@ -28,12 +28,15 @@
 </div>
 </div>
 </div> 
+<div class = "EndHolder">
+<button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
+</div>
 </div>
 </template>
 
 <script>
 import router from '../router.js'
-import Intro from './Intro'
+import Intro from '../components/Intro'
 export default {
     name: 'Demo',
     components:{Intro},
@@ -59,7 +62,7 @@ export default {
     },
     methods: {
         nextDemo(){
-            router.push('/')
+            router.push('/dThree')
             console.log('buttonWorking')
         },
         createEntry(){

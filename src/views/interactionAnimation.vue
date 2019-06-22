@@ -18,7 +18,7 @@
     </div>
 </div>
 <div class = "EndHolder">
-<button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
+<button type="submit" @click.prevent="nextDemo()"> Back Home </button>
 </div>
 
 </div>
@@ -27,7 +27,7 @@
 <script>
 import router from '../router.js'
 import 'particles.js'
-import Intro from './Intro'
+import Intro from '../components/Intro'
 export default {
     name: 'demoThree',
     components: {Intro},
@@ -139,7 +139,7 @@ export default {
             {"particles_nb":2}}},"retina_detect":true});
         },
         nextDemo(){
-            router.push('dFour')
+            router.push('/')
             console.log('buttonWorking')
         }
     }
