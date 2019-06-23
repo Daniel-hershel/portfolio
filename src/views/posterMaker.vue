@@ -9,7 +9,12 @@
     <div class = "instruction"> {{instructionsOne}} </div>
     </div>
   <input id="keyInput" v-model="keyWord" placeholder="edit me">
-  <button class = "miniButton" type="submit" @click.prevent="createImage()">Create</button>
+  <AltButton
+msg="Generate"
+v-bind:onClick="this.createImage"
+  >
+
+  </AltButton>
 </div>
 
 <div v-show:if="action" id = "output">
@@ -49,9 +54,10 @@
 <script>
 import router from '../router.js'
 import Intro from '../components/Intro.vue'
+import AltButton from '../components/AltButton.vue'
 export default {
     name: 'DemoTwo',
-    components: {Intro},
+    components: {Intro, AltButton},
     data () {
         return {
             fontSize: 52,
@@ -77,17 +83,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+@foreground: #ffe3b7;
+@background: #0e2431; 
+@highlight: #ffaf00;
+@crimson: #cb0101;
  /* eslint-disable */
 
-@import url('https://fonts.googleapis.com/css?family=Istok+Web:700|Marck+Script|Maven+Pro:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Istok+Web:700|Marck+Script|Maven+Pro:700&display=swap&css');
 
 #DemoTwo{
     grid-template-columns: 375px;
     margin:auto;
     grid-auto-rows: minmax(200px, auto);
     font-size: 16px;
-    color:#537780;
     margin-bottom: 2.5em;
 }
 
@@ -125,16 +134,7 @@ export default {
     margin-top:.8em;
 }
 
-.miniButton { 
-    background: #43dde6;
-    color:#fc5185;
-    border:none;
-    width:150px;
-    }
-.miniButton:hover{ 
-    color: #43dde6;
-    background:#fc5185;
-    }
+
 .fontSizing{
     margin: 1.5vh;
 }
@@ -150,8 +150,8 @@ img {
     width: 332px;
     height: 190px;
     padding: .5vw;
-    border: 9px solid #43dde6;
-    box-shadow: 9px 5px 1px 1px #fc5185;
+    border: 9px solid @foreground;
+    box-shadow: 9px 5px 1px 1px @highlight;
 }
 
 #keyword{
@@ -164,7 +164,7 @@ img {
     /* font-family: 'Oswald', sans-serif; */
     letter-spacing: .07em;
     font-weight: 900;
-    box-shadow: 6px 3px 1px 1px rgba(252, 81, 133, 1);
+    box-shadow: 6px 3px 1px 1px @highlight;
 }
 
 

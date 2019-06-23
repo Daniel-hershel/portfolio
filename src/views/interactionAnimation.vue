@@ -146,17 +146,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+@foreground: #ffe3b7;
+@background: #0e2431; 
+@highlight: #ffaf00;
+@crimson: #cb0101;
  /* eslint-disable */
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap&css');
 
 #Demo{
     display: grid;
-    width: 85vw;
-    grid-template-columns: 85vw;
+    /* width: 85vw; */
+    /* grid-template-columns: 85vw; */
     grid-auto-rows: minmax(100px, auto);
     margin:auto;
-    background: #f0f0f0;    
     color:#537780;
     font-size: 21px;   
 }
@@ -164,11 +167,11 @@ export default {
 
 .MainContentHolder {
     display: grid;
-    width: 80vw;
+    width: 100%;
     margin:auto;
     grid-gap: .5em;
     background: #537780;
-    grid-template-columns: 40vw 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows:30vh 50vh;
     grid-template-areas:
     "topLeft topRight"
@@ -186,7 +189,7 @@ export default {
 }
 .animOne{
     grid-area: topLeft;
-    background:#64868e;
+    background:@background;
     font-size: 45px;
     font-family: 'Oswald';
     font-weight:900;
@@ -198,7 +201,8 @@ export default {
 
 .animTwo{
     grid-area: topRight;
-    background:#98b4a6;
+    background:@background;
+    // background:#98b4a6;
     color: #d1e4d1;
     font-size: 24px;
 }
@@ -210,7 +214,7 @@ export default {
 
 .animThree {
     grid-area:bottom;
-    background:#d1e4d1;
+    background:@background;
 
 }
 /* ---- particles.js container ---- */
@@ -233,7 +237,7 @@ export default {
 
 
 /* Mobile Settings */
-@media (max-width: 800px) {
+@media (max-width: 960px) {
 
     #Demo{
     font-size: 16px;
