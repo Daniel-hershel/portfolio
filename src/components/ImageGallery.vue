@@ -51,6 +51,8 @@ export default {
 .active{
     width: 320px;
     height: 188px;
+    border:2px solid @foreground;
+
 }
 .featured{
     width: 100%;
@@ -105,7 +107,7 @@ img {
     max-width: 900px;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));  
     grid-auto-rows: minmax(160px, auto);
-    width: 90vw;
+    // width: 90vw;
     margin:auto;
 
 }

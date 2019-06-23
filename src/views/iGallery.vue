@@ -56,10 +56,7 @@ export default {
 
 #Demo{
     display: grid;
-    width: 100vw;
-    grid-template-columns: 100vw;
     grid-auto-rows: minmax(100px, auto);
-    /* background: #f0f0f0; */
     color:#537780;
     font-size:16px;
 }

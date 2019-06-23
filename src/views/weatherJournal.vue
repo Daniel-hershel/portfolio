@@ -83,9 +83,11 @@ export default {
 }
 </script>
 
-<style scoped>
-<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,600,700&display=swap" rel="stylesheet">
-
+<style lang="less" scoped>
+@foreground: #ffe3b7;
+@background: #0e2431; 
+@highlight: #ffaf00;
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap&css');
 /*  Mobile First  */
 
 #Demo{
@@ -93,14 +95,15 @@ export default {
     margin:auto;
     grid-auto-rows: minmax(200px, auto);
     font-size: 16px;
-    color:#537780;
-
+    grid-gap: 2em;
+    /* border:2px solid red;  */
 }
 
 .stage{
-    background:#f9f6d8;
+    /* background:#f9f6d8; */
     min-height: 300px;
     font-family: 'Oswald', sans-serif;
+    margin-top: 1em;
 }
 #entryHolder{
     display:grid;
@@ -148,7 +151,8 @@ export default {
 @media (min-width: 900px) {
 #Demo{
     grid-auto-rows: minmax(200px, auto);
-    font-size: 20px;    
+    font-size: 20px;
+
 }
 }
 </style>

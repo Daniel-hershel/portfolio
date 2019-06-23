@@ -50,7 +50,7 @@ export default {
 /* Mobile First */
 #Home{
   display: grid;
-  width: 80vw;
+  // width: 80vw;
   grid-auto-rows: minmax(100px, auto);
   margin:auto;
   /* margin-top: 10vh; */
@@ -89,7 +89,7 @@ export default {
   #Home{
       grid-template-columns:repeat(5, 1fr);
       grid-template-rows: 15vh 1fr;
-      width:85vw;
+      // width:85vw;
       margin:auto;
       margin-top: 10vh;
       grid-template-areas:
