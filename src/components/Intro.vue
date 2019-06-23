@@ -42,9 +42,7 @@ a{
 
     margin: 1em;
     color: lighten(@background, 10%);
-    // position: absolute;
-    // bottom: 0;
-    // right: 1em;
+    font-size: .8em;
 }
 
 a:hover{

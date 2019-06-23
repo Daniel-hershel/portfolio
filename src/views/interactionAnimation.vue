@@ -3,20 +3,14 @@
 
 <Intro v-bind:msg="msg"> </Intro>
 
-<div class = "MainContentHolder">
-    <div class ="animOne animHolder" v-on:mouseover="ghostMouseOver" v-on:mouseout="ghostMouseOut">
-       <div class="wrapper ghost" > {{animationOne.text}} </div>
-    </div>
-    <div class ="animTwo animHolder">
-       <div class="wrapper connectedText" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" > {{animationTwo.text}} </div>
-    </div>
-    <div class ="animThree animHolder">
-        <div id="particles-js">
-        </div>
-       <div class="wrapper quote"> {{animationThree.text}} </div>
-        
-    </div>
-</div>
+<TextFX
+v-bind:animOneText="animationOne.text"
+v-bind:animTwoText="animationTwo.text"
+v-bind:animThreeText="animationThree.text"
+>
+
+</TextFX
+
 <div class = "EndHolder">
 <button type="submit" @click.prevent="nextDemo()"> Back Home </button>
 </div>
@@ -28,9 +22,10 @@
 import router from '../router.js'
 import 'particles.js'
 import Intro from '../components/Intro'
+import TextFX from '../components/TextFX'
 export default {
     name: 'demoThree',
-    components: {Intro},
+    components: {Intro, TextFX},
     data () {
         return {
             msg: "This demo uses Velocity.js to create interactive text animations and Particles.js to generate the interactive particles. Layout with Vue.js and CSS Grid.",
@@ -74,15 +69,6 @@ export default {
             Velocity(thing.target,'reverse')
         },
 
-        ghostMouseOver(thing, done){
-            //  Velocity(thing.target, { letterSpacing: '-=.3em',rotateY: -5,  rotateZ: 10  },{ duration:300, easing:'easeInSine', complete:done} )
-
-        },
-
-        ghostMouseOut(thing,done){
-            //  Velocity(thing.target,'reverse')
-
-        },
       
 
         initParticles(){
@@ -162,71 +148,6 @@ export default {
 }
 
 
-.MainContentHolder {
-    display: grid;
-    width: 100%;
-    margin:auto;
-    grid-gap: .2em;
-    border: .2em solid @foreground;
-    background: @foreground;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows:30vh 50vh;
-    grid-template-areas:
-    "topLeft topRight"
-    "bottom bottom";
-}
-
-.animHolder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.animOne{
-    grid-area: topLeft;
-    background:@background;
-    font-size: 45px;
-    font-family: 'Oswald';
-    font-weight:900;
-    letter-spacing: .3em;
-    /* box-shadow: 1px 2px 5px 5px #f3fbf1; */
-    text-shadow: 0px 0px 0px @highlight;
-    color: @background;
-}
-
-.animTwo{
-    grid-area: topRight;
-    background:@background;
-    // background:#98b4a6;
-    color: #d1e4d1;
-    font-size: 24px;
-}
-
-.connectedText{
-    text-shadow: 2px 4px 20px white;
-    width: 85%;
-}
-
-.animThree {
-    grid-area:bottom;
-    background:@background;
-
-}
-/* ---- particles.js container ---- */
-
-#particles-js{
-  width: 100%;
-  height: 100%;
-
-}
-.quote{
-    /* border: .2px solid #444; */
-    position: absolute;
-    font-size: 54px;
-    text-shadow: 2px 1px @highlight;
-}
 
 .EndHolder {
     margin-top: 2em;
@@ -234,7 +155,7 @@ export default {
 
 
 /* Mobile Settings */
-@media (max-width: 960px) {
+@media (max-width: 920px) {
 
     #Demo{
     font-size: 16px;
