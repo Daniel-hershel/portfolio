@@ -7,7 +7,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/dOne">Demo One</router-link> |
       <router-link to="/dTwo">Demo Two</router-link> |
-      <router-link to="/dThree">Demo Three</router-link>|
+      <router-link to="/dThree">Demo Three</router-link> |
       <router-link to="/dFour">Demo Four</router-link>
     </div>
     <router-view />
@@ -15,9 +15,14 @@
   </div>
 </template>
 
-<style>
+<style lang="less">
+
+@foreground: #ffe3b7;
+@background: #0e2431; 
+
 body{
-  background:#f0f0f0;
+  background:@background;
+
 
 }
 #app {
@@ -25,9 +30,8 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background:#f0f0f0;
-  /* background:#0e2431; */
+  color:@foreground;
+  /*background:#f0f0f0;*/
 }
 #nav {
   padding: 25px;
@@ -35,12 +39,11 @@ body{
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color:#537780;
 }
 
 #nav a.router-link-exact-active {
-  /* color: #42b983; */
-  color: #fc5185;
+  color: #ffaf00;
 }
 input:focus,
 select:focus,
@@ -73,14 +76,14 @@ button{
    background: none;
    width: 300px;
    height:50px;
-   color: #537780;
-   border: 2px solid #537780;
+   color: @foreground;
+   border: 2px solid @foreground;
    font-size:16px;
    font-weight:bold;
    margin-top: 1.5em;
 }
 button:hover{
-    background:#537780;
-    color:white;
+    background:@foreground;
+    color:@background;
 }
 </style>

@@ -32,7 +32,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+@foreground: #ffe3b7;
 
 
 #imagesHolder{
@@ -43,7 +44,7 @@ export default {
     grid-template-columns: 90vw;
     color:#0C385F;
     grid-gap:.05em;
-    border:6px solid #537780;
+    border:6px solid @foreground;
 
 }
 
@@ -72,6 +73,8 @@ export default {
     flex-direction: column;
     */
     padding: .2em;
+    border:2px solid @foreground;
+
 }
 
 .picture:hover{

@@ -42,7 +42,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="less">
+
+@foreground: #ffe3b7;
  /* eslint-disable */
 
 /* Mobile First */
@@ -57,8 +59,7 @@ export default {
   "hd"
   "ti"
   "bl";
-  background: #f0f0f0;
-  color:#537780;
+  color:@foreground;
   font-size: 18px;
 }
 #name{
