@@ -20,6 +20,7 @@
 @foreground: #ffe3b7;
 @background: #0e2431; 
 @highlight: #ffaf00;
+@feature: #f9b248;
 
 body{
   background:@background;
@@ -53,7 +54,7 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
-    background-color: #f3fbf1;
+    background-color: lighten(@feature, 21%) ;
 
 }
 input{
@@ -61,7 +62,8 @@ input{
     width: 250px;
     border: 2px solid #537780;
     text-align: center;
-    background-color: #f3fbf1;
+    background-color: lighten(@feature, 15%) ;
+    border: .1em solid @feature;
     margin-top:.8em;
     font-size:1.2em;
 }
@@ -83,12 +85,11 @@ input:focus {
   font-size:1.3em;
 }
 textarea{
-      border: 2px solid #537780;
-    background-color: #f3fbf1;
+    background-color: lighten(@feature, 15%) ;
+    border: .1em solid @feature;
     height: 100px;
     width: 250px;
-    font-size:1.2em;
-
+    font-size:1em;
 }
 button{
    background: none;

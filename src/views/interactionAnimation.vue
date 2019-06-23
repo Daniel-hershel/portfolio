@@ -96,7 +96,7 @@ export default {
             {"enable":true,"value_area":1200}},
 
             //node color 
-            "color": {"value":"#042037"},
+            "color": {"value":"#ffaf00"},
 
             "shape":
             {"type":"circle","stroke":
@@ -117,8 +117,8 @@ export default {
             //'edges' connectors between two nodes
             "line_linked":
             {"enable":true,"distance":150,
-            "color":"#226666",
-            // "color":"#EF6E73",
+            // "color":"#226666",
+            "color":"#cb0101",
             "opacity":0.4,"width":1},
 
             "move":
@@ -156,11 +156,8 @@ export default {
 
 #Demo{
     display: grid;
-    /* width: 85vw; */
-    /* grid-template-columns: 85vw; */
     grid-auto-rows: minmax(100px, auto);
     margin:auto;
-    color:#537780;
     font-size: 21px;   
 }
 
@@ -169,8 +166,9 @@ export default {
     display: grid;
     width: 100%;
     margin:auto;
-    grid-gap: .5em;
-    background: #537780;
+    grid-gap: .2em;
+    border: .2em solid @foreground;
+    background: @foreground;
     grid-template-columns: 1fr 1fr;
     grid-template-rows:30vh 50vh;
     grid-template-areas:
@@ -178,15 +176,14 @@ export default {
     "bottom bottom";
 }
 
-
 .animHolder {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    /*height:30vh;*/
 }
+
 .animOne{
     grid-area: topLeft;
     background:@background;
@@ -195,8 +192,8 @@ export default {
     font-weight:900;
     letter-spacing: .3em;
     /* box-shadow: 1px 2px 5px 5px #f3fbf1; */
-    text-shadow: 0px 0px 0px rgba(243, 251, 241, 1);
-    color: #64868e;
+    text-shadow: 0px 0px 0px @highlight;
+    color: @background;
 }
 
 .animTwo{
@@ -228,7 +225,7 @@ export default {
     /* border: .2px solid #444; */
     position: absolute;
     font-size: 54px;
-    text-shadow: 2px 1px #64868e;
+    text-shadow: 2px 1px @highlight;
 }
 
 .EndHolder {
