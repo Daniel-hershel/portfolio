@@ -4,7 +4,7 @@
        <div class="wrapper ghost" > {{animOneText}} </div>
     </div>
     <div class ="animTwo animHolder">
-       <div class="wrapper connectedText" v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" > {{animTwoText}} </div>
+       <div class="wrapper connectedText"  v-on:mouseover="mouseOver" v-on:mouseout="mouseOut" > {{animTwoText}} </div>
     </div>
     <div class ="animThree animHolder">
         <div id="particles-js">
@@ -26,10 +26,27 @@ export default {
             animOneText: String,
             animTwoText: String,
             animThreeText: String
+        },
+        methods: {
+            mouseOver(event){
+                this.$emit('comeTogether',event.target)
+            },
+            mouseOut(event){
+                this.$emit('breakApart', event.target)
+            }
         }
 }
 </script>
-<style>
+<style scoped lang="less">
+ /* eslint-disable */
+@foreground: #ffe3b7;
+@background: #0e2431; 
+@highlight: #ffaf00;
+@crimson: #cb0101;
+@feature: #f9b248;
+@edgeRed: #cb0101;
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap&css');
 
 .MainContentHolder {
     display: grid;
@@ -73,8 +90,15 @@ export default {
 }
 
 .connectedText{
-    text-shadow: 2px 4px 20px white;
-    width: 85%;
+    display: flex;
+    align-items:  center;
+    justify-content:center;
+    text-shadow: 2px 4px 20px @highlight;
+    box-shadow: 1px 1px 10px @edgeRed;
+    width: 80%;
+    padding: .3em;
+    height: 30vh;
+    // border: 2px solid yellow;
 }
 
 .animThree {
