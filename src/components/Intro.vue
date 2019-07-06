@@ -1,7 +1,7 @@
 <template>
 <div class = "textHolder">
     <div id = "content">{{msg}}</div>
-    <a href = "https://github.com/Daniel-hershel/portfolio/tree/master/src" target="_blank"> See The Code Here </a>
+    <a :href = "href" target="_blank"> See The Code Here </a>
 </div>
 
 </template>
@@ -11,6 +11,7 @@ export default {
     component: "Intro",
     props:{
         msg: String,
+        href: String
     }
 }
 </script>
@@ -54,7 +55,6 @@ a:hover{
 @media (max-width: 700px) {
 .textHolder{
     width: 85%;
-    color:#537780;
     margin:auto;
     margin-bottom: 1.1em;
     font-size: 16px;    

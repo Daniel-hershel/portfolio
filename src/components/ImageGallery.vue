@@ -69,20 +69,13 @@ export default {
 }
 
 .thumbnails{
- /*   display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    */
     padding: .2em;
     border:2px solid @foreground;
-
 }
 
 .picture:hover{
     border: 1px solid #0C385F;
     width: 95%;
-
 }
 .active{
 }
@@ -94,29 +87,24 @@ img {
 
 #imagesHolder{
     max-width: 900px;
-
 }
 
 .active{
     width: 100%;
     height: 390px;
-
 }
 .thumbnailsWrapper{
     display: grid;
     max-width: 900px;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));  
     grid-auto-rows: minmax(160px, auto);
-    // width: 90vw;
     margin:auto;
-
 }
 
 .picture{
     width: 100%;
     height: 150px;
 }
-
 
 }
 

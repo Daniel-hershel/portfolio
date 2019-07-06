@@ -1,6 +1,6 @@
 <template>
 <div id = "Demo">
-<Intro v-bind:msg="msg"> </Intro>
+<Intro v-bind:msg="msg" href="https://github.com/Daniel-hershel/portfolio/blob/master/src/components/ImageGallery.vue"> </Intro>
 
 <ImageGallery
 v-bind:topics="topics"
@@ -8,6 +8,7 @@ v-bind:activeIndex="activeIndex"
 @clicked="featureImage"
 >
 </ImageGallery>
+
 <div class = "EndHolder">
 <button type="submit" @click.prevent="nextDemo()"> Next Demo </button>
 </div>
@@ -31,7 +32,6 @@ export default {
         }
     },
     mounted() {
-        console.log('mounted working A');
 
     },
     methods: {
@@ -39,13 +39,9 @@ export default {
             router.push('dTwo')
         },
         featureImage (e){
-
             this.activeIndex = this.topics.indexOf(e);
-            
             console.log(this.activeIndex)
-
-        },
-       
+        },       
     }
 }
 </script>
@@ -53,7 +49,6 @@ export default {
 <style scoped>
  /* eslint-disable */
 /*  Mobile First  */
-
 #Demo{
     display: grid;
     grid-auto-rows: minmax(100px, auto);
@@ -67,7 +62,5 @@ export default {
     grid-auto-rows: minmax(100px, auto);
     font-size: 21px;  
 }
-
-
 }
 </style>

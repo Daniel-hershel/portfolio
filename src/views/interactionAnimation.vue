@@ -1,7 +1,7 @@
 <template>
 <div id = "Demo">
 
-<Intro v-bind:msg="msg"> </Intro>
+<Intro v-bind:msg="msg" href="https://github.com/Daniel-hershel/portfolio/blob/master/src/views/interactionAnimation.vue"> </Intro>
 
 <TextFX
 v-bind:animOneText="animationOne.text"
@@ -47,7 +47,7 @@ export default {
     mounted (){
         // Animation One
         let aOne = document.querySelector('.ghost')
-        Velocity(aOne,{textShadowX:'-=3.8px',textShadowBlur:'+=10px',  letterSpacing: '-=.2em'}, {duration: 8200, delay:800, easing:'easeInQuad', loop:true})
+        Velocity(aOne,{textShadowX:'-=3.8px',textShadowBlur:'+=10px',  letterSpacing: '-=.2em'}, {duration: 4200, delay:800, easing:'easeInQuad', loop:true})
         // Animation Two
         let connectedText = document.querySelector(".connectedText")
         

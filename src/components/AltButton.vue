@@ -25,13 +25,14 @@ export default{
 @crimson: #cb0101;
 
 .miniButton { 
-    background: @crimson;
-    color:lighten(@highlight, 15%);
+    color:@foreground;
+    background:lighten(@background, 15%);
     border:none;
     width:150px;
     }
 .miniButton:hover{ 
-    color: @crimson;
-    background:lighten(@highlight, 15%);
+    background:@foreground;
+    color:lighten(@background, 15%);
+
     }
 </style>

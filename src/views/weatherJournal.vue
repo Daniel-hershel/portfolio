@@ -1,7 +1,8 @@
 <template>
 <div id = "Demo">
 
-<Intro v-bind:msg="msg"> </Intro>
+<Intro v-bind:msg="msg" href="https://github.com/Daniel-hershel/portfolio/blob/master/src/views/weatherJournal.vue"> </Intro>
+
 <div class = "wrapper">
     <div class = "instruction"> {{zipInstruction}}</div>
     <input id = "zip" v-model="zip" placeholder="enter zip">
@@ -18,7 +19,6 @@
 <div id = "entryHolder">
 <div id = "temp" class = "hold">
 <div>{{temp}} degrees</div>
-
 </div>
 <div id="date" class = "hold">
 {{date}}
@@ -100,8 +100,7 @@ export default {
 }
 
 .stage{
-    /* background:#f9f6d8; */
-    min-height: 300px;
+    // min-height: 300px;
     font-family: 'Oswald', sans-serif;
     margin-top: 1em;
 }

@@ -1,6 +1,6 @@
 <template>
 <div id = "DemoTwo">
-<Intro v-bind:msg="msg"> </Intro>
+<Intro v-bind:msg="msg" href="https://github.com/Daniel-hershel/portfolio/blob/master/src/views/posterMaker.vue"> </Intro>
 
 <div class = "contentHolder">
 
