@@ -64,7 +64,7 @@ export default {
             color: "white",
             title: 'Create Your Own Poster',
             title: "Demo Two",
-            msg: "This demo uses conditional rendering, text binding, and style control for an interactive poster making environment.",
+            msg: "This demo uses conditional rendering, text binding, and style control for an interactive poster making environment. The photos are sourced from the Unsplash API.",
             instructionsOne: 'To begin enter any word or short phrase into the box below and press "Create" to generate an interactive poster with your word.',
             // instructionsTwo:'To start a new poster, or to get a new image, simply start typing in the box and watch the poster genreate in real time!',
             instructionsThree: 'You can adjust the text style with the controls below your generated image.',
